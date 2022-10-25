@@ -49,7 +49,13 @@ function shuffleDeck() {
 shuffleDeck();
 const addDeck = document.querySelector("#add-deck");
 addDeck.addEventListener("click", (e) => {
-  console.log("add deck");
+  for (let suit of suits) {
+    for (const rank of ranks) {
+      makeDeck(rank, suit);
+    }
+  }
+  shuffleDeck();
+  console.log(deck)
 });
 
 const dealButton = document.querySelector("#deal-button");
